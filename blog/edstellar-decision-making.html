@@ -844,18 +844,18 @@
 
   /* ============ CLICK-BASED GUIDED DEMO (670×254) ============ */
   .gdemo {
-    width: 100%;
+    width: 670px;
     max-width: 100%;
-    height: 290px;
+    height: 254px;
     margin: 0 auto 22px;
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    background: linear-gradient(150deg, #12173a 0%, #1a2260 40%, #1b3080 70%, #1B40A9 100%);
+    background: linear-gradient(135deg, #0f172a 0%, var(--navy) 50%, var(--blue-deep) 100%);
     color: #fff;
     user-select: none;
-    box-shadow: 0 10px 30px rgba(20,30,80,0.35), 0 2px 0 rgba(255,255,255,0.06) inset;
+    box-shadow: 0 8px 22px rgba(34,41,90,0.25);
   }
   .gdemo::before {
     content: "";
@@ -870,36 +870,36 @@
   .gdemo-progress {
     position: absolute; top: 0; left: 0; right: 0;
     display: flex; align-items: center;
-    padding: 16px 22px 0;
-    gap: 6px;
+    padding: 14px 22px 0;
+    gap: 4px;
     z-index: 3;
   }
   .gdemo-progress .gstep {
-    width: 24px; height: 24px;
+    width: 18px; height: 18px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.22);
-    font-size: 10px; font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    font-size: 9px; font-weight: 700;
+    color: rgba(255,255,255,0.55);
     display: inline-flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    transition: all 0.28s cubic-bezier(0.34,1.56,0.64,1);
+    transition: all 0.25s ease;
   }
   .gdemo-progress .gstep.done {
-    background: rgba(197,232,38,0.18);
-    border-color: rgba(197,232,38,0.6);
+    background: rgba(197,232,38,0.25);
+    border-color: var(--lime);
     color: var(--lime);
   }
   .gdemo-progress .gstep.active {
     background: var(--lime);
     border-color: var(--lime);
     color: var(--navy);
-    transform: scale(1.22);
-    box-shadow: 0 0 0 4px rgba(197,232,38,0.22), 0 2px 8px rgba(197,232,38,0.4);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 3px rgba(197,232,38,0.25);
   }
   .gdemo-progress .gline {
     flex: 1; height: 2px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.12);
     border-radius: 2px;
     overflow: hidden;
     position: relative;
@@ -907,13 +907,12 @@
   .gdemo-progress .gline.done::after {
     content: "";
     position: absolute; inset: 0;
-    background: linear-gradient(90deg, var(--lime), rgba(197,232,38,0.6));
-    border-radius: 2px;
+    background: var(--lime);
   }
   .gdemo-stage {
     position: absolute;
-    top: 56px; left: 0; right: 0;
-    height: 150px;
+    top: 44px; left: 0; right: 0;
+    height: 130px;
     z-index: 2;
   }
   .gscene {
@@ -933,8 +932,7 @@
 
   /* SCENE 1 — Welcome (bouncing item) */
   .scene-welcome .em.hero {
-    font-size: 92px;
-    filter: drop-shadow(0 8px 22px rgba(0,0,0,0.55));
+    font-size: 76px;
   }
   .gscene.active.scene-welcome .em.hero {
     animation: heroBob 1.6s ease-in-out infinite, heroPop 0.5s ease-out;
@@ -1313,41 +1311,37 @@
   }
   .gdemo-caption {
     position: absolute;
-    left: 22px; right: 22px; bottom: 54px;
+    left: 22px; right: 22px; bottom: 44px;
     text-align: center;
     z-index: 2;
-    pointer-events: none;
   }
   .gdemo-caption .gtitle {
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     color: var(--lime);
-    margin-bottom: 7px;
+    margin-bottom: 3px;
     letter-spacing: 0.2px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
   }
   .gdemo-caption .gsub {
-    font-size: 13.5px;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.45;
-    font-weight: 400;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.4;
   }
   .gdemo-hint {
     position: absolute;
-    bottom: 16px; left: 50%;
+    bottom: 12px; left: 50%;
     transform: translateX(-50%);
-    background: rgba(255,255,255,0.97);
+    background: rgba(255,255,255,0.95);
     color: var(--blue-deep);
-    font-size: 12.5px;
-    font-weight: 700;
-    padding: 9px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
     border-radius: 999px;
-    display: inline-flex; align-items: center; gap: 7px;
+    display: inline-flex; align-items: center; gap: 6px;
     z-index: 3;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    animation: hintPulse 1.8s ease-in-out infinite;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: hintPulse 1.6s ease-in-out infinite;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
   }
   .gdemo.is-started .gdemo-hint {
     opacity: 0;
@@ -1355,24 +1349,26 @@
     pointer-events: none;
     transform: translateX(-50%) translateY(8px);
   }
-  .gdemo-hint .cursor { font-size: 15px; }
+  .gdemo-hint .cursor {
+    font-size: 12px;
+  }
   .gdemo-hint .hint-m { display: none; }
   .gdemo-hint .hint-d { display: inline; }
   @keyframes hintPulse {
-    0%, 100% { transform: translateX(-50%) translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
-    50%      { transform: translateX(-50%) translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.35); }
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(-3px); }
   }
   .gdemo-counter {
     position: absolute;
-    top: 17px; right: 22px;
-    font-size: 11px;
-    color: rgba(255,255,255,0.65);
+    top: 14px; right: 22px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
     font-weight: 600;
     letter-spacing: 0.5px;
     z-index: 3;
   }
   .gdemo.is-done {
-    background: linear-gradient(150deg, #0f172a 0%, var(--blue-deep) 60%, #4f5dd6 100%);
+    background: linear-gradient(135deg, var(--blue-deep) 0%, #4f5dd6 100%);
   }
   /* Mobile-only tap indicator — hidden by default */
   .gdemo-tap-indicator { display: none; }
@@ -2687,6 +2683,73 @@
   }
 }
 
+
+/* ── scene-complete (step 5 — debrief/trophy) ───────────────────────────── */
+.scene-complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene-complete .em.hero {
+  font-size: 76px;
+  filter: drop-shadow(0 4px 14px rgba(255,215,0,0.55));
+}
+.gscene.active.scene-complete .em.hero {
+  animation: completeIn 0.65s cubic-bezier(0.34,1.56,0.64,1) forwards,
+             completePulse 2.2s ease-in-out 0.65s infinite;
+}
+@keyframes completeIn {
+  from { transform: scale(0.25) rotate(-25deg); opacity: 0; }
+  to   { transform: scale(1)    rotate(0deg);   opacity: 1; }
+}
+@keyframes completePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.09); }
+}
+
+/* ── Replay hint on last scene ──────────────────────────────────────────── */
+.gdemo.is-done .gdemo-stage::after {
+  content: "↺ Click to Replay";
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: rgba(0,0,0,0.52);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  pointer-events: none;
+  letter-spacing: 0.3px;
+  z-index: 5;
+}
+
+/* ── Toast notification ──────────────────────────────────────────────────── */
+.gdemo-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20,20,30,0.88);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+.gdemo-toast.show { opacity: 1; }
+
+/* ── Fullscreen scene-complete sizing ───────────────────────────────────── */
+.gdemo-fullscreen-demo .scene-complete .em.hero {
+  font-size: 110px;
+}
+
 </style>
 </head>
 <body>
@@ -2802,9 +2865,9 @@
 <!-- ============ BREADCRUMB ============ -->
 <div class="breadcrumb-bar">
   <div class="breadcrumb-inner">
-    <a href="../index.html">Home</a>
+    <a href="#">Home</a>
     <span class="sep">&#x203A;</span>
-    <a href="./index.html">Blog</a>
+    <a href="#">Blog</a>
     <span class="sep">&#x203A;</span>
     <a href="#">Activities</a>
     <span class="sep">&#x203A;</span>
@@ -2821,33 +2884,33 @@
       <li class="active"><a href="#why">Why This Matters in 2026</a></li>
       <li class="heading"><a href="#activities">Best Decision Making Games, Activities, and Exercises for Employees</a></li>
       
-      <li><a href="#a027premortemanalysisbestdecisionmakinaaame">1. Pre-Mortem Analysis</a></li>
+      <li><a href="#a027premortemanalysisbestdecisionmakinggame">1. Pre-Mortem Analysis</a></li>
       
-      <li><a href="#a028ethicaldilemmaworkshopbestdecisionmakinaaame">2. Ethical Dilemma Workshop</a></li>
+      <li><a href="#a028ethicaldilemmaworkshopbestdecisionmakinggame">2. Ethical Dilemma Workshop</a></li>
       
-      <li><a href="#a029redteamvsblueteambestdecisionmakinaaame">3. Red Team vs. Blue Team</a></li>
+      <li><a href="#a029redteamvsblueteambestdecisionmakinggame">3. Red Team vs. Blue Team</a></li>
       
-      <li><a href="#a030dotvotinabestdecisionmakinaaame">4. Dot Voting</a></li>
+      <li><a href="#a030dotvotingbestdecisionmakinggame">4. Dot Voting</a></li>
       
-      <li><a href="#a031thesurvivalscenariobestdecisionmakinaaame">5. The Survival Scenario</a></li>
+      <li><a href="#a031thesurvivalscenariobestdecisionmakinggame">5. The Survival Scenario</a></li>
       
-      <li><a href="#a032theinvestmentaamebestdecisionmakinaaame">6. The Investment Game</a></li>
+      <li><a href="#a032theinvestmentgamebestdecisionmakinggame">6. The Investment Game</a></li>
       
-      <li><a href="#a033thecustomercomplaintsimulationbestdecisionmakinaaame">7. The Customer Complaint Simulation</a></li>
+      <li><a href="#a033thecustomercomplaintsimulationbestdecisionmakinggame">7. The Customer Complaint Simulation</a></li>
       
-      <li><a href="#a034thedecisiontreeexercisebestdecisionmakinaaame">8. The Decision Tree Exercise</a></li>
+      <li><a href="#a034thedecisiontreeexercisebestdecisionmakinggame">8. The Decision Tree Exercise</a></li>
       
-      <li><a href="#a035theinnovationchallenaebestdecisionmakinaaame">9. The Innovation Challenge</a></li>
+      <li><a href="#a035theinnovationchallengebestdecisionmakinggame">9. The Innovation Challenge</a></li>
       
-      <li><a href="#a036prioritizemebestdecisionmakinaaame">10. Prioritize Me!</a></li>
+      <li><a href="#a036prioritizemebestdecisionmakinggame">10. Prioritize Me!</a></li>
       
-      <li><a href="#a037therolereversalaamebestdecisionmakinaaame">11. The Role Reversal Game</a></li>
+      <li><a href="#a037therolereversalgamebestdecisionmakinggame">11. The Role Reversal Game</a></li>
       
-      <li><a href="#a038theconsensuschallenaebestdecisionmakinaaame">12. The Consensus Challenge</a></li>
+      <li><a href="#a038theconsensuschallengebestdecisionmakinggame">12. The Consensus Challenge</a></li>
       
-      <li><a href="#a039realtimecrisissimulationbestdecisionmakinaaame">13. Real-Time Crisis Simulation</a></li>
+      <li><a href="#a039realtimecrisissimulationbestdecisionmakinggame">13. Real-Time Crisis Simulation</a></li>
       
-      <li><a href="#a040thetradeoffaamebestdecisionmakinaaame">14. The Trade-Off Game</a></li>
+      <li><a href="#a040thetradeoffgamebestdecisionmakinggame">14. The Trade-Off Game</a></li>
       
       
       <li class="heading"><a href="#conclusion">Conclusion</a></li>
@@ -2910,7 +2973,7 @@
 
     <!-- ACTIVITIES CARDS -->
     
-    <article class="activity-card" id="a027premortemanalysisbestdecisionmakinaaame">
+    <article class="activity-card" id="a027premortemanalysisbestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -2960,7 +3023,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -3283,7 +3346,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a028ethicaldilemmaworkshopbestdecisionmakinaaame">
+    <article class="activity-card" id="a028ethicaldilemmaworkshopbestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -3335,7 +3398,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -3661,7 +3724,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a029redteamvsblueteambestdecisionmakinaaame">
+    <article class="activity-card" id="a029redteamvsblueteambestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -3711,7 +3774,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4026,7 +4089,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a030dotvotinabestdecisionmakinaaame">
+    <article class="activity-card" id="a030dotvotingbestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -4078,7 +4141,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4404,7 +4467,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a031thesurvivalscenariobestdecisionmakinaaame">
+    <article class="activity-card" id="a031thesurvivalscenariobestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -4458,7 +4521,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4803,7 +4866,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a032theinvestmentaamebestdecisionmakinaaame">
+    <article class="activity-card" id="a032theinvestmentgamebestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -4853,7 +4916,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -5168,7 +5231,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a033thecustomercomplaintsimulationbestdecisionmakinaaame">
+    <article class="activity-card" id="a033thecustomercomplaintsimulationbestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -5218,7 +5281,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -5541,7 +5604,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a034thedecisiontreeexercisebestdecisionmakinaaame">
+    <article class="activity-card" id="a034thedecisiontreeexercisebestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -5591,7 +5654,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -5906,7 +5969,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a035theinnovationchallenaebestdecisionmakinaaame">
+    <article class="activity-card" id="a035theinnovationchallengebestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -5960,7 +6023,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6297,7 +6360,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a036prioritizemebestdecisionmakinaaame">
+    <article class="activity-card" id="a036prioritizemebestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -6351,7 +6414,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6688,7 +6751,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a037therolereversalaamebestdecisionmakinaaame">
+    <article class="activity-card" id="a037therolereversalgamebestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -6740,7 +6803,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7074,7 +7137,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a038theconsensuschallenaebestdecisionmakinaaame">
+    <article class="activity-card" id="a038theconsensuschallengebestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -7128,7 +7191,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7465,7 +7528,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a039realtimecrisissimulationbestdecisionmakinaaame">
+    <article class="activity-card" id="a039realtimecrisissimulationbestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -7515,7 +7578,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7838,7 +7901,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a040thetradeoffaamebestdecisionmakinaaame">
+    <article class="activity-card" id="a040thetradeoffgamebestdecisionmakinggame">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -7888,7 +7951,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>

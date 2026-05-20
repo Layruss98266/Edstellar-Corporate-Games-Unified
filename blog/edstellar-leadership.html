@@ -844,18 +844,18 @@
 
   /* ============ CLICK-BASED GUIDED DEMO (670×254) ============ */
   .gdemo {
-    width: 100%;
+    width: 670px;
     max-width: 100%;
-    height: 290px;
+    height: 254px;
     margin: 0 auto 22px;
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    background: linear-gradient(150deg, #12173a 0%, #1a2260 40%, #1b3080 70%, #1B40A9 100%);
+    background: linear-gradient(135deg, #0f172a 0%, var(--navy) 50%, var(--blue-deep) 100%);
     color: #fff;
     user-select: none;
-    box-shadow: 0 10px 30px rgba(20,30,80,0.35), 0 2px 0 rgba(255,255,255,0.06) inset;
+    box-shadow: 0 8px 22px rgba(34,41,90,0.25);
   }
   .gdemo::before {
     content: "";
@@ -870,36 +870,36 @@
   .gdemo-progress {
     position: absolute; top: 0; left: 0; right: 0;
     display: flex; align-items: center;
-    padding: 16px 22px 0;
-    gap: 6px;
+    padding: 14px 22px 0;
+    gap: 4px;
     z-index: 3;
   }
   .gdemo-progress .gstep {
-    width: 24px; height: 24px;
+    width: 18px; height: 18px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    border: 1.5px solid rgba(255,255,255,0.22);
-    font-size: 10px; font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.1);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    font-size: 9px; font-weight: 700;
+    color: rgba(255,255,255,0.55);
     display: inline-flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    transition: all 0.28s cubic-bezier(0.34,1.56,0.64,1);
+    transition: all 0.25s ease;
   }
   .gdemo-progress .gstep.done {
-    background: rgba(197,232,38,0.18);
-    border-color: rgba(197,232,38,0.6);
+    background: rgba(197,232,38,0.25);
+    border-color: var(--lime);
     color: var(--lime);
   }
   .gdemo-progress .gstep.active {
     background: var(--lime);
     border-color: var(--lime);
     color: var(--navy);
-    transform: scale(1.22);
-    box-shadow: 0 0 0 4px rgba(197,232,38,0.22), 0 2px 8px rgba(197,232,38,0.4);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 3px rgba(197,232,38,0.25);
   }
   .gdemo-progress .gline {
     flex: 1; height: 2px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.12);
     border-radius: 2px;
     overflow: hidden;
     position: relative;
@@ -907,13 +907,12 @@
   .gdemo-progress .gline.done::after {
     content: "";
     position: absolute; inset: 0;
-    background: linear-gradient(90deg, var(--lime), rgba(197,232,38,0.6));
-    border-radius: 2px;
+    background: var(--lime);
   }
   .gdemo-stage {
     position: absolute;
-    top: 56px; left: 0; right: 0;
-    height: 150px;
+    top: 44px; left: 0; right: 0;
+    height: 130px;
     z-index: 2;
   }
   .gscene {
@@ -933,8 +932,7 @@
 
   /* SCENE 1 — Welcome (bouncing item) */
   .scene-welcome .em.hero {
-    font-size: 92px;
-    filter: drop-shadow(0 8px 22px rgba(0,0,0,0.55));
+    font-size: 76px;
   }
   .gscene.active.scene-welcome .em.hero {
     animation: heroBob 1.6s ease-in-out infinite, heroPop 0.5s ease-out;
@@ -1313,41 +1311,37 @@
   }
   .gdemo-caption {
     position: absolute;
-    left: 22px; right: 22px; bottom: 54px;
+    left: 22px; right: 22px; bottom: 44px;
     text-align: center;
     z-index: 2;
-    pointer-events: none;
   }
   .gdemo-caption .gtitle {
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     color: var(--lime);
-    margin-bottom: 7px;
+    margin-bottom: 3px;
     letter-spacing: 0.2px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
   }
   .gdemo-caption .gsub {
-    font-size: 13.5px;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.45;
-    font-weight: 400;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.4;
   }
   .gdemo-hint {
     position: absolute;
-    bottom: 16px; left: 50%;
+    bottom: 12px; left: 50%;
     transform: translateX(-50%);
-    background: rgba(255,255,255,0.97);
+    background: rgba(255,255,255,0.95);
     color: var(--blue-deep);
-    font-size: 12.5px;
-    font-weight: 700;
-    padding: 9px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
     border-radius: 999px;
-    display: inline-flex; align-items: center; gap: 7px;
+    display: inline-flex; align-items: center; gap: 6px;
     z-index: 3;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    animation: hintPulse 1.8s ease-in-out infinite;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: hintPulse 1.6s ease-in-out infinite;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
   }
   .gdemo.is-started .gdemo-hint {
     opacity: 0;
@@ -1355,24 +1349,26 @@
     pointer-events: none;
     transform: translateX(-50%) translateY(8px);
   }
-  .gdemo-hint .cursor { font-size: 15px; }
+  .gdemo-hint .cursor {
+    font-size: 12px;
+  }
   .gdemo-hint .hint-m { display: none; }
   .gdemo-hint .hint-d { display: inline; }
   @keyframes hintPulse {
-    0%, 100% { transform: translateX(-50%) translateY(0); box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
-    50%      { transform: translateX(-50%) translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.35); }
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(-3px); }
   }
   .gdemo-counter {
     position: absolute;
-    top: 17px; right: 22px;
-    font-size: 11px;
-    color: rgba(255,255,255,0.65);
+    top: 14px; right: 22px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
     font-weight: 600;
     letter-spacing: 0.5px;
     z-index: 3;
   }
   .gdemo.is-done {
-    background: linear-gradient(150deg, #0f172a 0%, var(--blue-deep) 60%, #4f5dd6 100%);
+    background: linear-gradient(135deg, var(--blue-deep) 0%, #4f5dd6 100%);
   }
   /* Mobile-only tap indicator — hidden by default */
   .gdemo-tap-indicator { display: none; }
@@ -2687,6 +2683,73 @@
   }
 }
 
+
+/* ── scene-complete (step 5 — debrief/trophy) ───────────────────────────── */
+.scene-complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene-complete .em.hero {
+  font-size: 76px;
+  filter: drop-shadow(0 4px 14px rgba(255,215,0,0.55));
+}
+.gscene.active.scene-complete .em.hero {
+  animation: completeIn 0.65s cubic-bezier(0.34,1.56,0.64,1) forwards,
+             completePulse 2.2s ease-in-out 0.65s infinite;
+}
+@keyframes completeIn {
+  from { transform: scale(0.25) rotate(-25deg); opacity: 0; }
+  to   { transform: scale(1)    rotate(0deg);   opacity: 1; }
+}
+@keyframes completePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.09); }
+}
+
+/* ── Replay hint on last scene ──────────────────────────────────────────── */
+.gdemo.is-done .gdemo-stage::after {
+  content: "↺ Click to Replay";
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: rgba(0,0,0,0.52);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  pointer-events: none;
+  letter-spacing: 0.3px;
+  z-index: 5;
+}
+
+/* ── Toast notification ──────────────────────────────────────────────────── */
+.gdemo-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20,20,30,0.88);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+.gdemo-toast.show { opacity: 1; }
+
+/* ── Fullscreen scene-complete sizing ───────────────────────────────────── */
+.gdemo-fullscreen-demo .scene-complete .em.hero {
+  font-size: 110px;
+}
+
 </style>
 </head>
 <body>
@@ -2802,9 +2865,9 @@
 <!-- ============ BREADCRUMB ============ -->
 <div class="breadcrumb-bar">
   <div class="breadcrumb-inner">
-    <a href="../index.html">Home</a>
+    <a href="#">Home</a>
     <span class="sep">&#x203A;</span>
-    <a href="./index.html">Blog</a>
+    <a href="#">Blog</a>
     <span class="sep">&#x203A;</span>
     <a href="#">Activities</a>
     <span class="sep">&#x203A;</span>
@@ -2823,15 +2886,15 @@
       
       <li><a href="#a080leadershipenvelopestop36leadershipactivit">1. Leadership Envelopes</a></li>
       
-      <li><a href="#a081yourfavoritemanaaertop36leadershipactivit">2. Your Favorite Manager</a></li>
+      <li><a href="#a081yourfavoritemanagertop36leadershipactivit">2. Your Favorite Manager</a></li>
       
       <li><a href="#a082leadershippizzatop36leadershipactivit">3. Leadership Pizza</a></li>
       
-      <li><a href="#a083playinawithstatustop36leadershipactivit">4. Playing with Status</a></li>
+      <li><a href="#a083playingwithstatustop36leadershipactivit">4. Playing with Status</a></li>
       
       <li><a href="#a084heardseenrespectedtop36leadershipactivit">5. Heard, Seen, Respected</a></li>
       
-      <li><a href="#a085marshmallowchallenaetop36leadershipactivit">6. Marshmallow Challenge</a></li>
+      <li><a href="#a085marshmallowchallengetop36leadershipactivit">6. Marshmallow Challenge</a></li>
       
       <li><a href="#a086blindsquareropetop36leadershipactivit">7. Blind Square Rope</a></li>
       
@@ -2847,27 +2910,27 @@
       
       <li><a href="#a092circlesofinfluencetop36leadershipactivit">13. Circles of Influence</a></li>
       
-      <li><a href="#a093partnerinawithateamoftwotop36leadershipactivit">14. Partnering with a Team of Two</a></li>
+      <li><a href="#a093partneringwithateamoftwotop36leadershipactivit">14. Partnering with a Team of Two</a></li>
       
       <li><a href="#a094whatineedfromyoutop36leadershipactivit">15. What I Need From You</a></li>
       
       <li><a href="#a095starframeworktop36leadershipactivit">16. STAR Framework</a></li>
       
-      <li><a href="#a096visualizinaaoalswithteamcanvastop36leadershipactivit">17. Visualizing Goals with Team Canvas</a></li>
+      <li><a href="#a096visualizinggoalswithteamcanvastop36leadershipactivit">17. Visualizing Goals with Team Canvas</a></li>
       
-      <li><a href="#a097effectivemeetinaleadershiptop36leadershipactivit">18. Effective Meeting Leadership</a></li>
+      <li><a href="#a097effectivemeetingleadershiptop36leadershipactivit">18. Effective Meeting Leadership</a></li>
       
-      <li><a href="#a098balancealianmentandautonomytop36leadershipactivit">19. Balance Alignment &amp; Autonomy</a></li>
+      <li><a href="#a098balancealignmentandautonomytop36leadershipactivit">19. Balance Alignment &amp; Autonomy</a></li>
       
       <li><a href="#a099creativesolutions15solutionstop36leadershipactivit">20. Creative Solutions (15% Solutions)</a></li>
       
-      <li><a href="#a100arowcoachinaexercisestop36leadershipactivit">21. GROW Coaching Exercises</a></li>
+      <li><a href="#a100growcoachingexercisestop36leadershipactivit">21. GROW Coaching Exercises</a></li>
       
       <li><a href="#a101dotmocracytop36leadershipactivit">22. Dotmocracy</a></li>
       
       <li><a href="#a102impactandeffortmatrixtop36leadershipactivit">23. Impact and Effort Matrix</a></li>
       
-      <li><a href="#a103analyzinapowerstakeholderinfluencetop36leadershipactivit">24. Analyzing Power (Stakeholder Influence)</a></li>
+      <li><a href="#a103analyzingpowerstakeholderinfluencetop36leadershipactivit">24. Analyzing Power (Stakeholder Influence)</a></li>
       
       <li><a href="#a104fishboneanalysistop36leadershipactivit">25. Fishbone Analysis</a></li>
       
@@ -2875,9 +2938,9 @@
       
       <li><a href="#a106coatofarmstop36leadershipactivit">27. Coat of Arms</a></li>
       
-      <li><a href="#a107establishinapurposeandculturetop36leadershipactivit">28. Establishing Purpose and Culture</a></li>
+      <li><a href="#a107establishingpurposeandculturetop36leadershipactivit">28. Establishing Purpose and Culture</a></li>
       
-      <li><a href="#a108activelisteninaexercisetop36leadershipactivit">29. Active Listening Exercise</a></li>
+      <li><a href="#a108activelisteningexercisetop36leadershipactivit">29. Active Listening Exercise</a></li>
       
       <li><a href="#a109trustbatteryexercisetop36leadershipactivit">30. Trust Battery Exercise</a></li>
       
@@ -2889,7 +2952,7 @@
       
       <li><a href="#a113conflictresponsesexercisetop36leadershipactivit">34. Conflict Responses Exercise</a></li>
       
-      <li><a href="#a114briahtblurryblindtop36leadershipactivit">35. Bright Blurry Blind</a></li>
+      <li><a href="#a114brightblurryblindtop36leadershipactivit">35. Bright Blurry Blind</a></li>
       
       <li><a href="#a115artofeffectivefeedbackworkshoptop36leadershipactivit">36. Art of Effective Feedback Workshop</a></li>
       
@@ -3002,7 +3065,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -3328,7 +3391,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a081yourfavoritemanaaertop36leadershipactivit">
+    <article class="activity-card" id="a081yourfavoritemanagertop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -3380,7 +3443,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -3758,7 +3821,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4084,7 +4147,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a083playinawithstatustop36leadershipactivit">
+    <article class="activity-card" id="a083playingwithstatustop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -4134,7 +4197,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4511,7 +4574,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4848,7 +4911,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a085marshmallowchallenaetop36leadershipactivit">
+    <article class="activity-card" id="a085marshmallowchallengetop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -4904,7 +4967,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -5306,7 +5369,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -5699,7 +5762,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6101,7 +6164,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6492,7 +6555,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6875,7 +6938,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7266,7 +7329,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7663,7 +7726,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7989,7 +8052,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a093partnerinawithateamoftwotop36leadershipactivit">
+    <article class="activity-card" id="a093partneringwithateamoftwotop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -8043,7 +8106,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -8432,7 +8495,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -8810,7 +8873,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -9136,7 +9199,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a096visualizinaaoalswithteamcanvastop36leadershipactivit">
+    <article class="activity-card" id="a096visualizinggoalswithteamcanvastop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -9188,7 +9251,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -9522,7 +9585,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a097effectivemeetinaleadershiptop36leadershipactivit">
+    <article class="activity-card" id="a097effectivemeetingleadershiptop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -9576,7 +9639,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -9921,7 +9984,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a098balancealianmentandautonomytop36leadershipactivit">
+    <article class="activity-card" id="a098balancealignmentandautonomytop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -9973,7 +10036,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -10351,7 +10414,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -10677,7 +10740,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a100arowcoachinaexercisestop36leadershipactivit">
+    <article class="activity-card" id="a100growcoachingexercisestop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -10729,7 +10792,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -11107,7 +11170,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -11485,7 +11548,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -11811,7 +11874,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a103analyzinapowerstakeholderinfluencetop36leadershipactivit">
+    <article class="activity-card" id="a103analyzingpowerstakeholderinfluencetop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -11861,7 +11924,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -12230,7 +12293,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -12617,7 +12680,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -12982,7 +13045,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -13305,7 +13368,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a107establishinapurposeandculturetop36leadershipactivit">
+    <article class="activity-card" id="a107establishingpurposeandculturetop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -13355,7 +13418,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -13670,7 +13733,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a108activelisteninaexercisetop36leadershipactivit">
+    <article class="activity-card" id="a108activelisteningexercisetop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -13724,7 +13787,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -14115,7 +14178,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -14506,7 +14569,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -14893,7 +14956,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -15262,7 +15325,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -15651,7 +15714,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -15977,7 +16040,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a114briahtblurryblindtop36leadershipactivit">
+    <article class="activity-card" id="a114brightblurryblindtop36leadershipactivit">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -16029,7 +16092,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -16409,7 +16472,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>

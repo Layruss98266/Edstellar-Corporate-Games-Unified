@@ -2683,6 +2683,73 @@
   }
 }
 
+
+/* ── scene-complete (step 5 — debrief/trophy) ───────────────────────────── */
+.scene-complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene-complete .em.hero {
+  font-size: 76px;
+  filter: drop-shadow(0 4px 14px rgba(255,215,0,0.55));
+}
+.gscene.active.scene-complete .em.hero {
+  animation: completeIn 0.65s cubic-bezier(0.34,1.56,0.64,1) forwards,
+             completePulse 2.2s ease-in-out 0.65s infinite;
+}
+@keyframes completeIn {
+  from { transform: scale(0.25) rotate(-25deg); opacity: 0; }
+  to   { transform: scale(1)    rotate(0deg);   opacity: 1; }
+}
+@keyframes completePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.09); }
+}
+
+/* ── Replay hint on last scene ──────────────────────────────────────────── */
+.gdemo.is-done .gdemo-stage::after {
+  content: "↺ Click to Replay";
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  background: rgba(0,0,0,0.52);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  pointer-events: none;
+  letter-spacing: 0.3px;
+  z-index: 5;
+}
+
+/* ── Toast notification ──────────────────────────────────────────────────── */
+.gdemo-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20,20,30,0.88);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+.gdemo-toast.show { opacity: 1; }
+
+/* ── Fullscreen scene-complete sizing ───────────────────────────────────── */
+.gdemo-fullscreen-demo .scene-complete .em.hero {
+  font-size: 110px;
+}
+
 </style>
 <style>
   .main-wrap { max-width: 800px; margin: 40px auto; display: block; }
@@ -2767,7 +2834,7 @@
 
     <!-- ACTIVITIES CARDS -->
     
-    <article class="activity-card" id="a152howlonaisaminutetop17timemanaaementac">
+    <article class="activity-card" id="a152howlongisaminutetop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -2817,7 +2884,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -3132,7 +3199,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a153findsomethinaincommontop17timemanaaementac">
+    <article class="activity-card" id="a153findsomethingincommontop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -3182,7 +3249,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -3497,7 +3564,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a154thenameaametop17timemanaaementac">
+    <article class="activity-card" id="a154thenamegametop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -3547,7 +3614,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -3862,7 +3929,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a155connectioncardstop17timemanaaementac">
+    <article class="activity-card" id="a155connectioncardstop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -3914,7 +3981,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4240,7 +4307,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a156mayonnaisejartop17timemanaaementac">
+    <article class="activity-card" id="a156mayonnaisejartop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -4292,7 +4359,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4618,7 +4685,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a157whatdidyoudoyesterdaytop17timemanaaementac">
+    <article class="activity-card" id="a157whatdidyoudoyesterdaytop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -4668,7 +4735,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -4983,7 +5050,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a158theareateaadroptop17timemanaaementac">
+    <article class="activity-card" id="a158thegreateggdroptop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -5037,7 +5104,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -5382,7 +5449,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a159paperboatfactorytop17timemanaaementac">
+    <article class="activity-card" id="a159paperboatfactorytop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -5434,7 +5501,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -5760,7 +5827,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a160howwouldyouspend86400top17timemanaaementac">
+    <article class="activity-card" id="a160howwouldyouspend86400top17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -5810,7 +5877,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6125,7 +6192,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a161timesquaredtop17timemanaaementac">
+    <article class="activity-card" id="a161timesquaredtop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -6175,7 +6242,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6490,7 +6557,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a162dealinawithdistractionstop17timemanaaementac">
+    <article class="activity-card" id="a162dealingwithdistractionstop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -6540,7 +6607,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -6855,7 +6922,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a163pickinaupblockstop17timemanaaementac">
+    <article class="activity-card" id="a163pickingupblockstop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -6907,7 +6974,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7233,7 +7300,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a164circadianrhythmtop17timemanaaementac">
+    <article class="activity-card" id="a164circadianrhythmtop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -7283,7 +7350,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7598,7 +7665,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a165jiasawpuzzlestop17timemanaaementac">
+    <article class="activity-card" id="a165jigsawpuzzlestop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -7652,7 +7719,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -7997,7 +8064,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a166sortthecardstop17timemanaaementac">
+    <article class="activity-card" id="a166sortthecardstop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -8047,7 +8114,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -8354,7 +8421,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a167pomodorotop17timemanaaementac">
+    <article class="activity-card" id="a167pomodorotop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -8404,7 +8471,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
@@ -8719,7 +8786,7 @@
       </div>
     </article>
     
-    <article class="activity-card" id="a168kanbantop17timemanaaementac">
+    <article class="activity-card" id="a168kanbantop17timemanagementac">
       <div class="ac-topbar">
         <div class="ac-pills">
           <span class="pill">&#x1F464; Age 18+</span>
@@ -8769,7 +8836,7 @@
             </div>
             <span class="spark s1">&#x2728;</span><span class="spark s2">&#x2728;</span>
           </div>
-          <div class="gscene scene-welcome" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
+          <div class="gscene scene-complete" data-title="Review the Learning" data-sub="Debrief results and connect learning to workplace behavior.">
             <span class="em hero">&#x1F3C6;</span>
           </div>
         </div>
